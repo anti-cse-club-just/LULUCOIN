@@ -1,0 +1,19 @@
+# SQLite File
+*.sqlite3
+
+# Pycache Files
+__pycache__/
+
+# Virtual Environment
+venv/
+.env
+
+# IDE Files
+.vscode/
+.idea/
+.cph/
+.DS_Store
+
+# Testing Files
+*.rest
+REQUEST_TESTER.py
