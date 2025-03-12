@@ -15,5 +15,4 @@ venv/
 .DS_Store
 
 # Testing Files
-*.rest
-REQUEST_TESTER.py
+TESTING/
