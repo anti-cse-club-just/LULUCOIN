@@ -67,6 +67,7 @@ class GlobalVariables(models.Model):
     difficulty = models.IntegerField(default=6)
     mining_reward = models.FloatField(default=25)
     fees = models.FloatField(default=0.02)
+    num_blocks = models.IntegerField(default=0)
     # max_block_size = models.IntegerField(default=10)
 
     def __str__(self):
@@ -74,6 +75,7 @@ class GlobalVariables(models.Model):
 
 
 class LuluCoinBlock(models.Model):
+    index = models.IntegerField(default=-1)
     block_hash = models.TextField()
     previous_block_hash = models.TextField()
     transactions = models.TextField()

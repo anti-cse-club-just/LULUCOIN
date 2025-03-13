@@ -244,7 +244,8 @@ class ValidateView(APIView):
                     self.balance_adjustment(block.created_by.id, GlobalVariables.objects.first().mining_reward) # Adjusting the block_reward for the miner
                     self.balance_adjustment(block.created_by.id, total_fees) # Adjusting the bonus balance of the miner
 
-                    LuluCoinBlock.objects.filter(id=block.id).update(is_pending=False, is_valid=True, block_reward=total_fees)
+                    LuluCoinBlock.objects.filter(id=block.id).update(is_pending=False, is_valid=True, block_reward=total_fees, index=GlobalVariables.objects.first().num_blocks)
+                    GlobalVariables.objects.update(num_blocks=GlobalVariables.objects.first().num_blocks + 1)
 
                     return Response({
                         "message": "Block is valid"
